@@ -81,7 +81,7 @@ type Table struct {
 	columnsAlign   []int
 }
 
-// Start New Table
+// NewWriter starts New Table
 // Take io.Writer Directly
 func NewWriter(writer io.Writer) *Table {
 	t := &Table{
@@ -309,12 +309,12 @@ func (t *Table) NumLines() int {
 	return len(t.lines)
 }
 
-// Clear rows
+// ClearRows clears rows
 func (t *Table) ClearRows() {
 	t.lines = [][][]string{}
 }
 
-// Clear footer
+// ClearFooter clears footer
 func (t *Table) ClearFooter() {
 	t.footers = [][]string{}
 }
